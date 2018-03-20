@@ -1,0 +1,186 @@
+{
+  "0": {
+    "network_name": "titanic_data",
+    "model_name": "titanic",
+    "timestamp": "20180319_113938",
+    "model_complexity": 140,
+    "model_architecture": {
+      "input_layer": {
+        "layer_type": "input_layer",
+        "layer_output": "[None, 3]"
+      },
+      "hidden_layer_1": {
+        "layer_type": "fully_connected_layer",
+        "layer_weights": "[3, 10]",
+        "layer_bias": "[10]",
+        "layer_activation": "relu",
+        "layer_output": "[None, 10]",
+        "layer_normalization": {
+          "Type": "l2_norm",
+          "Parameters": {
+            "dim": 0,
+            "epsilon": 1e-12
+          }
+        }
+      },
+      "hidden_layer_2": {
+        "layer_type": "fully_connected_layer",
+        "layer_weights": "[10, 10]",
+        "layer_bias": "[10]",
+        "layer_activation": "relu",
+        "layer_output": "[None, 10]"
+      },
+      "output_layer": {
+        "layer_type": "output_layer",
+        "layer_weights": "[10, 1]",
+        "layer_bias": "[1]",
+        "layer_activation": "none",
+        "layer_output": "[None, 1]"
+      }
+    },
+    "epochs": 10,
+    "epoch_step": 1,
+    "learning_rate": 0.01,
+    "cost": "--persistence-training",
+    "optimizer": "adam",
+    "train_batch_size": 105,
+    "train_batches": 1,
+    "valid_batch_size": 30,
+    "valid_batches": 1,
+    "test_batch_size": 15,
+    "test_batches": 1,
+    "path": {
+      "dl_save_path": "/saves/dl/",
+      "ml_save_path": "/saves/ml/",
+      "data_save_path": "/data/",
+      "graph_save_path": "/graphs/tf/"
+    },
+    "placeholders": {
+      "input_layer": "input_layer:0",
+      "output_layer": "output_layer:0"
+    },
+    "dropout_placeholders": {},
+    "prediction_placeholders": {
+      "input_layer": "input_layer:0"
+    },
+    "weights": {
+      "hidden_layer_1": "hidden_layer_1/weights/Variable:0",
+      "hidden_layer_2": "hidden_layer_2/weights/Variable:0",
+      "output_layer": "output_layer/weights/Variable:0"
+    },
+    "bias": {
+      "hidden_layer_1": "hidden_layer_1/biases/Variable:0",
+      "hidden_layer_2": "hidden_layer_2/biases/Variable:0",
+      "output_layer": "output_layer/biases/Variable:0"
+    },
+    "layers": {
+      "input_layer": "input_layer:0",
+      "hidden_layer_1": "hidden_layer_1/l2_norm:0",
+      "hidden_layer_2": "hidden_layer_2/Relu:0",
+      "output_layer": "output_layer/Add:0"
+    },
+    "train_op": {
+      "optimizer": "Adam",
+      "lr_placeholder": "Placeholder:0"
+    },
+    "train_meta": {
+      "epochs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "epoch_progress": [
+        0.0,
+        11.11111111111111,
+        22.22222222222222,
+        33.33333333333333,
+        44.44444444444444,
+        55.55555555555556,
+        66.66666666666666,
+        77.77777777777779,
+        88.88888888888889,
+        100.0
+      ],
+      "epoch_eta": [
+        "0:00:01.205906",
+        "0:00:01.146928",
+        "0:00:01.086203",
+        "0:00:01.034906",
+        "0:00:00.976561",
+        "0:00:00.918612",
+        "0:00:00.858738",
+        "0:00:00.800010",
+        "0:00:00.742390",
+        "0:00:00.685661"
+      ],
+      "epoch_time_elapsed": [
+        "0:00:00.134269",
+        "0:00:00.193235",
+        "0:00:00.253959",
+        "0:00:00.305253",
+        "0:00:00.363601",
+        "0:00:00.421664",
+        "0:00:00.481417",
+        "0:00:00.540147",
+        "0:00:00.597779",
+        "0:00:00.654555"
+      ],
+      "epoch_metrics": {
+        "epoch_cost": [
+          3.8076932430267334,
+          3.6918716430664062,
+          3.5849640369415283,
+          3.4882969856262207,
+          3.403316020965576,
+          3.3315255641937256,
+          3.2743606567382812,
+          3.2329769134521484,
+          3.207929849624634,
+          3.198732614517212
+        ]
+      }
+    },
+    "test_meta": {
+      "test_time_elapsed": "0:00:00.002303",
+      "test_metrics": {
+        "test_cost": [
+          4.117928504943848
+        ]
+      }
+    },
+    "valid_meta": {
+      "epoch_metrics": {
+        "valid_cost": [
+          5.4211506843566895,
+          5.219501972198486,
+          5.023137092590332,
+          4.832801342010498,
+          4.649444580078125,
+          4.47426176071167,
+          4.308735370635986,
+          4.154656887054443,
+          4.014108180999756,
+          3.8893465995788574
+        ]
+      }
+    },
+    "batch_metrics_for_train": {
+      "cost_batch_metric": "cost_1/Mean:0"
+    },
+    "evaluation_metrics_dict": {
+      "cost_placeholder": "metrics/cost_placeholder:0",
+      "cost_tensor": "metrics/cost_assign:0",
+      "cost_variable": "metrics/cost_variable:0"
+    },
+    "evaluation_metrics": [
+      "cost"
+    ]
+  }
+}
